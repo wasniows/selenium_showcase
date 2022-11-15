@@ -17,6 +17,14 @@ public class MantineSelect implements ISelect {
         this.selectWebElement = rootSelect;
     }
 
+    public MantineSelect(WebDriver driver, String inputCssSelector){
+
+        this.driver = driver;
+
+        selectWebElement = driver.findElement(By.cssSelector(".mantine-Select-root:has("+inputCssSelector+")"));
+
+    }
+
     @Override
     public boolean isMultiple() {
         return false;

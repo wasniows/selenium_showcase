@@ -18,8 +18,30 @@ dependencies {
 
     testImplementation 'io.github.bonigarcia:webdrivermanager:5.3.1'
 
+    testCompileOnly 'org.projectlombok:lombok:1.18.24'
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
+
+    testImplementation 'com.github.javafaker:javafaker:1.0.2'
+
+//  ^^^ security testImplementation
+    testImplementation 'com.fasterxml.jackson.core:jackson-databind:2.14.0'
+    testImplementation 'commons-io:commons-io:2.11.0'
+    testImplementation 'org.bouncycastle:bcprov-jdk15on:1.70'
+    //   security testImplementation
+
+
 }
 
 test {
     useJUnitPlatform()
 }
+
+compileJava.options.encoding = 'UTF-8'
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+

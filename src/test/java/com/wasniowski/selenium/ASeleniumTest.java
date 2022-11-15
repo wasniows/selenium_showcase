@@ -37,7 +37,7 @@ public class ASeleniumTest {
 
         FileUtils.copyFile(screenshot, new File("build/test-results/snapshot" + testName + ".png"));
 
-        Thread.sleep(5000);
+        //Thread.sleep(5000);
 
         driver.close();
     }
